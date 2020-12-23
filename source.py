@@ -25,7 +25,7 @@ for date in Active_Projects['permit_issuance_date']:
     year = date.split('/')[2][2:]
     project_count[f'{month}/{year}'] += 1
 # plot number of active projects per month
-plt.plot(project_count.keys(), project_count.values())
+plt.plot(list(project_count.keys()), list(project_count.values()))
 plt.xticks(rotation=90)
 plt.title('Number of Permits Granted Per Month')
 plt.xlabel('Month')
@@ -48,7 +48,7 @@ for key in project_count:
     if project_count[key] == 0: # remove all months with zero projects from plot
         project_count[key] = None
 # plot violations per month
-plt.plot(project_count.keys(), project_count.values())
+plt.plot(list(project_count.keys()), list(project_count.values()))
 plt.xticks(rotation=90)
 plt.title('Violations Per Month')
 plt.xlabel('Month')
